@@ -16,10 +16,12 @@ public class LoginPage extends BasePage {
 
     @FindBy(xpath = "//input[@type='submit']")
     public WebElement LoginBtn;
+    @FindBy(xpath ="//script[@type='text/javascript']")
+    public WebElement ErrorMsg ;
 
-    public void AddLoginData(){
-        UserID.sendKeys("mngr476670");
-        UserPassword.sendKeys("ezaquna");
+    public void AddLoginData(String name,String password){
+        UserID.sendKeys(name);
+        UserPassword.sendKeys(password);
         LoginBtn.click();
     }
 }
